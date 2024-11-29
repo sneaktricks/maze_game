@@ -2,7 +2,7 @@
 import 'package:maze_game/maze/maze.dart';
 
 void main() {
-  final m = Maze(51, 51);
+  final m = Maze.realDimensions(5, 5);
   m.prepare();
   print(m.toString());
   // runApp(const MainApp());

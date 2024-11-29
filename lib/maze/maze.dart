@@ -12,7 +12,17 @@ class Maze {
     );
   }
 
-  void prepare({int startX = 1, int startY = 1}) {
+  factory Maze.realDimensions(int width, int height) {
+    return Maze(width * 2 + 1, height * 2 + 1);
+  }
+
+  void prepare() {
+    const startX = 1;
+    const startY = 1;
+
+    _maze[0][1] = false;
+    _maze[height-1][width-2] = false;
+
     final visited = List.generate(
       height, 
       (index) => List.filled(width, false),
