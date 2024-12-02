@@ -32,8 +32,12 @@ class LevelCard extends StatelessWidget {
               children: [
                 Visibility(
                   visible: cleared,
-                  child: const Icon(
-                    Icons.check,
+                  child: Icon(
+                    (personalBest != null &&
+                            devBest != null &&
+                            personalBest! <= devBest!)
+                        ? Icons.done_all
+                        : Icons.done,
                     color: Colors.green,
                     size: 60,
                   ),

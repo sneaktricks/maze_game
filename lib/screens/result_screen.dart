@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:maze_game/controllers/score_controller.dart';
 import 'package:maze_game/screens/level_selection_screen.dart';
 
 class ResultScreen extends StatelessWidget {
+  final scoreController = Get.find<ScoreController>();
+
   final int moves;
   final int? best;
   final (int, int) size;
-  const ResultScreen(
+  ResultScreen(
       {super.key, required this.moves, required this.best, required this.size});
 
   String get levelName => "${size.$1}x${size.$2}";
+
+  bool get isBetterThanDev =>
+      scoreController.getDevScore(levelName)?.isGreaterThan(moves) ?? true;
+  bool get isPb => best == null || moves < best!;
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +33,11 @@ class ResultScreen extends StatelessWidget {
             ),
             Text("Moves: $moves", style: const TextStyle(fontSize: 24)),
             Text(
-                best == null || moves < best!
-                    ? "New Personal Best!"
-                    : "Best: $best",
+                isBetterThanDev
+                    ? "Congrats! You beat the Dev!"
+                    : isPb
+                        ? "New Personal Best!"
+                        : "Best: $best",
                 style: const TextStyle(fontSize: 24)),
             const Padding(
               padding: EdgeInsets.all(16),

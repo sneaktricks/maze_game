@@ -5,7 +5,7 @@ class ScoreController {
   final scoreService = Get.find<ScoreService>();
 
   /// Top scores of the dev. Can you beat these?
-  static final Map<String, int> devScores = {
+  static const Map<String, int> devScores = {
     "3x3": 1,
     "6x6": 3,
     "12x12": 35,
