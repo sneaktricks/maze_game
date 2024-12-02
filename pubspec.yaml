@@ -12,6 +12,8 @@ dependencies:
   flame: ^1.22.0
   flame_forge2d: ^0.18.2+3
   get: ^4.6.6
+  hive_ce: 2.5.0+2
+  hive_ce_flutter: 2.0.0
 
 dev_dependencies:
   flutter_test:

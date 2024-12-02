@@ -16,10 +16,17 @@ class StartScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text("Maze Game"),
+            const Text(
+              "Maze Game",
+              style: TextStyle(fontSize: 80),
+            ),
+            const Padding(padding: EdgeInsets.all(20)),
             ElevatedButton(
-              onPressed: () => Get.to(() => const LevelSelectionScreen()),
-              child: const Text("Press to Start"),
+              onPressed: () => Get.to(() => LevelSelectionScreen()),
+              child: const Text(
+                "Press to Start",
+                style: TextStyle(fontSize: 30),
+              ),
             )
           ],
         ),

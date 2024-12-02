@@ -31,7 +31,7 @@ class LevelCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Visibility(
-                  visible: !cleared,
+                  visible: cleared,
                   child: const Icon(
                     Icons.check,
                     color: Colors.green,

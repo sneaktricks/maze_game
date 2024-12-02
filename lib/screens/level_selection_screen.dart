@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maze_game/components/level_card.dart';
+import 'package:maze_game/controllers/score_controller.dart';
 import 'package:maze_game/screens/game_screen.dart';
+import 'package:maze_game/screens/start_screen.dart';
 
 class LevelSelectionScreen extends StatelessWidget {
-  const LevelSelectionScreen({super.key});
+  final scoreController = Get.find<ScoreController>();
+
+  static final Map<String, (int, int)> levels = {
+    "3x3": (3, 3),
+    "6x6": (6, 6),
+    "12x12": (12, 12),
+  };
+
+  LevelSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,40 +32,30 @@ class LevelSelectionScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                LevelCard(
-                  size: (5, 5),
-                  personalBest: null,
-                  devBest: null,
-                  cleared: false,
+              children: levels.entries.map((e) {
+                final pb = scoreController.getLevelPB(e.key);
+                return LevelCard(
+                  size: e.value,
+                  personalBest: pb,
+                  devBest: scoreController.getDevScore(e.key),
+                  cleared: pb != null,
                   onTap: () => Get.to(
-                    () => const GameScreen(mazeWidth: 5, mazeHeight: 5),
+                    () => GameScreen(
+                      mazeWidth: e.value.$1,
+                      mazeHeight: e.value.$2,
+                      levelName: e.key,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 10),
-                LevelCard(
-                  size: (10, 10),
-                  personalBest: null,
-                  devBest: null,
-                  cleared: false,
-                  onTap: () => Get.to(
-                    () => const GameScreen(mazeWidth: 10, mazeHeight: 10),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                LevelCard(
-                  size: (20, 20),
-                  personalBest: null,
-                  devBest: null,
-                  cleared: false,
-                  onTap: () => Get.to(
-                    () => const GameScreen(mazeWidth: 20, mazeHeight: 20),
-                  ),
-                ),
-              ],
+                );
+              }).toList(),
             ),
           ],
         ),
+      ),
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => Get.off(() => const StartScreen()),
+            icon: const Icon(Icons.arrow_back)),
       ),
     );
   }
