@@ -1,6 +1,6 @@
 name: maze_game
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flame: ^1.22.0
   flame_forge2d: ^0.18.2+3
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:
