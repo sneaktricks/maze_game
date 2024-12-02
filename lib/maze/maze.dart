@@ -1,3 +1,4 @@
+import 'package:flame/components.dart';
 import 'package:maze_game/datastruct/stack.dart';
 
 class Maze {
@@ -15,6 +16,9 @@ class Maze {
   factory Maze.realDimensions(int width, int height) {
     return Maze(width * 2 + 1, height * 2 + 1);
   }
+
+  Vector2 get start => Vector2(1, 0);
+  Vector2 get end => Vector2(width - 2, height - 1);
 
   void prepare() {
     const startX = 1;
