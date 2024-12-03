@@ -47,4 +47,5 @@ of the trajectory line. Dragging further applies more force to the ball. The bal
 and in midair. Additionally, the ball bounces off walls, which can be utilized to navigate the maze.
 
 Maze difficulty depends on its size, where a higher-dimension maze has a smaller ball and more complex maze.
-The most difficult mazes demand precision to move a smaller ball. However, more force can be applied to smaller balls.
+The most difficult mazes demand extreme precision to move a smaller ball. However, to alleviate this challenge,
+more force can be applied to smaller balls.
