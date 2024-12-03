@@ -43,9 +43,9 @@ The gameplay loop is: Start -> Level Select -> Game -> Results -> Level Select -
 ### How to Move and Reach the Exit
 
 To move the ball, drag on it to see an orange trajectory line. Upon release, the ball is launched in the direction
-of the trajectory line. Dragging further applies more force to the ball. The ball can be launched both on the ground
+of this trajectory line. Dragging further applies more force to the ball. The ball can be launched both on the ground
 and in midair. Additionally, the ball bounces off walls, which can be utilized to navigate the maze.
 
-Maze difficulty depends on its size, where a higher-dimension maze has a smaller ball and more complex maze.
+Maze difficulty depends on its size, where a higher-dimension maze is more complex and has a smaller ball.
 The most difficult mazes demand extreme precision to move a smaller ball. However, to alleviate this challenge,
 more force can be applied to smaller balls.
