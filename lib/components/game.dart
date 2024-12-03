@@ -61,7 +61,7 @@ class MazeGame extends Forge2DGame {
 
   Future<void> addTexts() async {
     final objectiveText = TextComponent(
-      text: "Drag the ball to launch it to the exit",
+      text: "Drag on the ball to launch it to the exit",
       anchor: Anchor.center,
       position: Vector2(0, camera.visibleWorldRect.top + 5),
       textRenderer: TextPaint(

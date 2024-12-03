@@ -1,4 +1,5 @@
 import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:flutter/material.dart';
 import 'package:maze_game/components/ball.dart';
 import 'package:maze_game/components/game.dart';
 
@@ -15,6 +16,8 @@ class Edge extends BodyComponent<MazeGame> with ContactCallbacks {
       type: BodyType.static,
       position: Vector2.zero(),
     );
+
+    if (isFinish) paint.color = Colors.transparent;
 
     final shape = EdgeShape()..set(from, to);
     final fixtureDef = FixtureDef(shape)..friction = 0.5;
