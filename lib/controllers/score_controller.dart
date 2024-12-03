@@ -9,6 +9,7 @@ class ScoreController {
     "3x3": 1,
     "6x6": 3,
     "12x12": 35,
+    "18x18": 122,
   };
 
   RxMap<String, int> scores;
