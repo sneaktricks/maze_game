@@ -10,7 +10,7 @@ juggling the ball in midair.
 
 ## Try it Online
 
-The game is available at ADD URL.
+The game is available at https://flutter-maze-game.web.app/.
 
 ## User Manual
 
